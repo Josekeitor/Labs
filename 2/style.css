@@ -1,0 +1,212 @@
+/*
+Resets
+ */
+ul
+{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/*
+
+Styles
+
+ */
+
+a {
+    text-decoration: none;
+}
+
+a:visited{
+    color: black;
+    text-decoration: none;
+}
+
+.button{
+    border-radius: 30px;
+    background-color: white;
+    border: 2px solid black;
+    color: black;
+    font-weight: bold;
+    padding: 15px;
+}
+
+.button:hover{
+    background-color: black;
+    color: white;
+}
+
+#contact-form-container{
+    display: none;
+}
+
+#contact-form-container button{
+    background-color: white;
+    border: 0px solid black;
+    color:  black;
+    font-weight: bold;
+    transition: all .2s ease-in-out;
+}
+
+#contact-form-container button:hover{
+    transform: scale(1.2);
+}
+
+#contact-form-container h3{
+    margin-left: 1%;
+}
+
+
+#content {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    justify-content: space-between;
+
+}
+
+#hobbies {
+    margin-top: 2vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#hobbies ul {
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: row wrap;
+}
+
+#hobbies ul li {
+    margin: 1vh 2vw;
+    text-align: center;
+
+}
+
+input {
+    border: 2px solid black;
+    border-radius: 30px;
+    padding: 10px;
+    margin-bottom: 2%;
+
+}
+
+.left{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.left h1{
+    font-size: x-large;
+    font-weight: bold;
+
+}
+
+#linkedin{
+    fill: #2867b2;
+}
+
+#profile-pic {
+    border-radius: 50%;
+    max-width: 20vw;
+}
+
+#project-list{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    color: white;
+}
+
+#project-list li{
+    margin-top: 4vh;
+    width: 28%;
+    background-color: #1A374D;
+}
+
+.card {
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-content: space-between;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    padding: 2%;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.right{
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    margin-top: 3vh;
+
+}
+
+.right
+footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+}
+.social-links{
+    display: flex;
+    justify-content: space-evenly;
+    width: 40%;
+    margin-top: 2vh;
+}
+
+.social-links a svg{
+    width: 60%;
+}
+
+.submit{
+    margin-top: 5vh;
+}
+
+textarea {
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 50%;
+    padding: 10px;
+}
+
+#translation-options{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#translation-options .button{
+    margin-left: 2vw;
+    padding: 10px;
+}
+
+
+@media screen and (max-width: 450px){
+
+    #content {
+        flex-direction: column;
+        height: auto;
+        margin-top: 2vh;
+    }
+
+    .left{
+        margin-right: auto;
+    }
+
+    #profile-pic {
+
+        max-width: 40vw;
+    }
+
+}
