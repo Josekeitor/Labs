@@ -3,14 +3,23 @@ $(document).ready(function() {
 // Start your code from here
 let temas = ["the weeknd", "space", "funny", "hello", "tesla"]
 
-temas.forEach(createButton);
+
+reload(temas)
 
 let addTopicButton = $("#add-topic");
 
 function createButton(topic) {
     let newButton = $("<button>");
     newButton.text(topic)
-    $("#topic-buttons").prepend(newButton);
+    $("#topic-buttons").append(newButton);
+}
+
+function reload(topics) {
+    let topicButtons = $("#topic-buttons");
+
+    topicButtons.html("");
+
+    topics.forEach(createButton);
 }
 
 function addTopic(e) {
@@ -18,10 +27,9 @@ function addTopic(e) {
     let topic = $("#topic-input")
     let text = topic.val()
     topic.val("")
+    temas.push(text);
 
-    let newButton = $("<button>");
-    newButton.text(text)
-    $("#topic-buttons").prepend(newButton);
+    reload(temas)
 }
 
 function toggleAnimate(){
@@ -40,10 +48,6 @@ function toggleAnimate(){
 }
 
 function createGif(rating, stillUrl, url) {
-
-
-
-
 
     let container = $("<div>");
     let text = $("<h2>");
