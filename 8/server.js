@@ -68,12 +68,23 @@ app.post("/api/tables", (req, res) => {
   if (currentCapacity < maxCapacity) {
     currentCapacity++;
     reservations.push(newReservation);
-    res.json({ message: "Your reservation was added succesfully" });
+    res.json({
+      type: "success",
+      message: "Your reservation was added succesfully",
+    });
   } else {
     waitlist.push(newReservation);
     res.json({
+      type: "failure",
       message:
         "We are sorry, there are no tables available, you have been added to our waitlist",
     });
   }
+});
+
+app.post("/api/clear", (req, res) => {
+  reservations = [];
+  waitlist = [];
+  currentCapacity = 0;
+  return res.json({ result: "success" });
 });

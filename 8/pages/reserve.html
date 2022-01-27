@@ -35,6 +35,8 @@
         </a>
       </div>
     </div>
+    <div class="alert alert-success" id="success"></div>
+    <div class="alert alert-warning" id="failure"></div>
     <div class="row">
       <div class="col-lg-12">
         <!-- Reservation Page -->
@@ -84,6 +86,8 @@
 
 <!-- BELOW CODE IS CRITICAL. IT HANDLES HOW FORM DATA IS SENT TO OUR SERVER -->
 <script type="text/javascript">
+  $("#success").hide()
+  $("#failure").hide()
 
   $("form").on("submit", addReservation);
  function addReservation(event) {
@@ -106,7 +110,21 @@
                 email.val("")
                 name.val("")
                 phone.val("")
-                alert(`${data.message}`)
+
+                if (data.type === "success") {
+                  let successAlert = $("#success")
+                  successAlert.text(data.message)
+                  successAlert.fadeTo(3000, 500).slideUp(500, () => {
+                    successAlert.slideUp(500);
+                  })
+                } else if (data.type === "failure") {
+                  let failureAlert = $("#failure")
+
+                  failureAlert.text(data.message);
+                  failureAlert.fadeTo(3000, 500).slideUp(500, () => {
+                    failureAlert.slideUp(500);
+                  })
+                }
               }
       );
 

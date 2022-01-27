@@ -74,8 +74,10 @@
   let port = 3000;
 
   $(document).ready(function () {
-    loadReservations()
-    loadWaitList()
+    loadReservations();
+    loadWaitList();
+    $("#clear").on("click", clearTables);
+
 
   });
 
@@ -166,6 +168,20 @@
     $.ajax(request);
   }
 
+  function clearTables() {
+
+    console.log("Clearing tables")
+    let request = {
+      url: "api/clear",
+      method: "POST",
+      success: function (response) {
+        $("#tableList").empty()
+        $("#waitList").empty()
+      }
+    }
+
+    $.ajax(request);
+  }
 
 
 </script>
